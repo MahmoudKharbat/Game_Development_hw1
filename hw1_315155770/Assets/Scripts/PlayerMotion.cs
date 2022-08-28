@@ -28,8 +28,8 @@ public class PlayerMotion : MonoBehaviour
         aCamera.transform.Rotate(new Vector3(rotationAroundX, 0, 0));
 
         // simple motion of player to z axis
-        // transform.position += new Vector3(0,0,0.05f);
-
+        // transform.position += new Vector3(0,0,-0.05f);
+        
         rotationAroundY = Input.GetAxis("Mouse X")*angularSpeed * Time.deltaTime;
         transform.Rotate(new Vector3(0, rotationAroundY, 0));
 
