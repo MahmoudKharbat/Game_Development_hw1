@@ -21,7 +21,7 @@ public class PlayerMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float deltaz; 
+        /*float deltaz; 
 
         rotationAroundX = -2*Input.GetAxis("Mouse Y") * angularSpeed * Time.deltaTime;
         // rotates only camera
@@ -35,11 +35,12 @@ public class PlayerMotion : MonoBehaviour
 
         // Time.deltaTime is time btween frames
         deltaz = speed*Input.GetAxis("Vertical")*Time.deltaTime; // can be {1,0,-1}
-
-        Vector3 motion = new Vector3(0, -0.5f, deltaz);// always forward in Local coordinates
+        
+        Vector3 motion = new Vector3(0, -0.5f, deltaz);// always forward in Local coordinates*/
+        Vector3 motion = new Vector3(0, -0.5f, -0.05f);
         motion = transform.TransformDirection(motion); // transforms motion to GLOBAL coordinates
         cController.Move(motion);// gets vector in GLOBAL coordinates
 
-        GetComponent<Rigidbody>().velocity = new Vector3(horizontalInput, 0, 0);
+       // GetComponent<Rigidbody>().velocity = new Vector3(horizontalInput, 0, 0);
     }
 }
