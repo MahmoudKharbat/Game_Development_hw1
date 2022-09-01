@@ -11,12 +11,13 @@ public class PlayerMotion : MonoBehaviour
     float horizontalInput;
     float speed=5f;
     public GameObject aCamera; // public means that it must be connected to some object in Unity
-
+    AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
     {
         cController = GetComponent<CharacterController>(); // connect to Character controller of player
+        sound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +34,10 @@ public class PlayerMotion : MonoBehaviour
 
         // Time.deltaTime is time btween frames
         deltaz = speed*Input.GetAxis("Vertical")*Time.deltaTime; // can be {1,0,-1}
-        
+
+        if (deltaz > 0.01f && !sound.isPlaying)
+            sound.Play();
+
         Vector3 motion = new Vector3(0, -0.5f, -deltaz);// always forward in Local coordinates
         motion = transform.TransformDirection(motion); // transforms motion to GLOBAL coordinates
         cController.Move(motion);// gets vector in GLOBAL coordinates
