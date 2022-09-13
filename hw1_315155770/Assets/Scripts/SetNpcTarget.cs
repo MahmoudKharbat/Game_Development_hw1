@@ -37,32 +37,32 @@ public class SetNpcTarget : MonoBehaviour
             if (targetCounter == 0)
             {
                 transform.position = new Vector3(-12,2,-27);
-                targetCounter++;
                 print("Current targetCounter is : " + targetCounter);
+                targetCounter++;
             }
             else if (targetCounter == 1)
             {
-                transform.position = new Vector3(-12, 2, -31);
-                targetCounter++;
+                transform.position = new Vector3(-12, 2, -32);
                 print("Current targetCounter is : " + targetCounter);
+                targetCounter++;
             }
             else if (targetCounter == 2)
             {
                 transform.position = new Vector3(-12, 2, -34);
-                targetCounter++;
                 print("Current targetCounter is : " + targetCounter);
+                targetCounter++;
             }
             else if (targetCounter == 3)
             {
                 transform.position = new Vector3(-12, 2, -37);
-                targetCounter++;
                 print("Current targetCounter is : " + targetCounter);
+                targetCounter++;
             }
             else
             {
-                transform.position = new Vector3(-5, 3, -35);
-                targetCounter = 0;
+                transform.position = new Vector3(-5, 3, -36);
                 print("Current targetCounter is : " + targetCounter);
+                targetCounter = 0;
             }
         }
     }
