@@ -7,7 +7,7 @@ public class npcMotion : MonoBehaviour
 {
     Animator animator;
     private NavMeshAgent agent;
-    public GameObject target;
+    public GameObject target1;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,21 +20,25 @@ public class npcMotion : MonoBehaviour
     {
         // StartCoroutine(changeState());
         animator.SetInteger("npcState", 1);
-        agent.SetDestination(target.transform.position);
+        agent.SetDestination(target1.transform.position);
+        /*StartCoroutine(changeTargetDelay());
+        agent.SetDestination(target2.transform.position);
+        StartCoroutine(changeTargetDelay());
+        agent.SetDestination(target3.transform.position);
+        StartCoroutine(changeTargetDelay());
+        agent.SetDestination(target4.transform.position);*/
     }
 
     IEnumerator changeState()
     {
-        Animator animator = GetComponent<Animator>();
         animator.SetInteger("npcState", 0);// stand
-
-        yield return new WaitForSeconds(2f);
-        animator.SetInteger("npcState", 1); // walk
-
         yield return new WaitForSeconds(5f);
-        animator.SetInteger("npcState", 2); // sit
-
-        yield return new WaitForSeconds(5f);
+        animator.SetInteger("npcState", 1);// walk
     }
 
+    IEnumerator changeTargetDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        changeState();
+    }
 }
