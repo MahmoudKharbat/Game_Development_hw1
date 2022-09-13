@@ -32,31 +32,26 @@ public class SetNpcTarget : MonoBehaviour
             if (targetCounter == 4)
             {
                 transform.position = new Vector3(-7, 3, -35);
-                print("Current targetCounter is : " + targetCounter);
                 targetCounter = 5;
             }
             if (targetCounter == 3)
             {
                 transform.position = new Vector3(-10, 3, -37);
-                print("Current targetCounter is : " + targetCounter);
                 targetCounter = 4;
             }
             if (targetCounter == 2)
             {
                 transform.position = new Vector3(-10, 3, -34);
-                print("Current targetCounter is : " + targetCounter);
                 targetCounter = 3;
             }
             if (targetCounter == 1)
             {
                 transform.position = new Vector3(-10,3,-32);
-                print("Current targetCounter is : " + targetCounter);
                 targetCounter = 2;
             }
             if (targetCounter == 0)
             {
                 transform.position = new Vector3(-10, 3, -28);
-                print("Current targetCounter is : " + targetCounter);
                 targetCounter = 1;
             }
         }
