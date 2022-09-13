@@ -41,20 +41,15 @@ public class npcMotion : MonoBehaviour
             animator.SetBool("isMoving", false);
             yield return new WaitForSeconds(10f);
         }*/
-
-        StartCoroutine(changeState());
-
         //animator.SetBool("isMoving", true);
         agent.SetDestination(target.transform.position);
+        StartCoroutine(changeState());
     }
 
     IEnumerator changeState()
     {
-        print("hello1");
-        if (agent.transform.position.x == -7 &&
-            agent.transform.position.x == 3 &&
-            agent.transform.position.x == -35
-           )
+        print("hello your position is: " + agent.transform.position.ToString("F"));
+        if (true)
         {
             print("hello2");
             agent.SetDestination(agent.transform.position);
