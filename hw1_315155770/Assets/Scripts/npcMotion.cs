@@ -15,12 +15,14 @@ public class npcMotion : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        agent.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.transform.position);
+        if(agent.enabled)
+            agent.SetDestination(target.transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,13 +33,28 @@ public class npcMotion : MonoBehaviour
 
     IEnumerator changeState(Collider other)
     {
-        animator.SetBool("isMoving", true);
+        /*if (target.gameObject == other.gameObject && target.transform.position.x > -8f)
+        {
+            agent.enabled = false;
+            animator.SetInteger("npcState", 0);
+            yield return new WaitForSeconds(5f);
+            animator.SetInteger("npcState", 1);
+            agent.enabled = true;
+        }*/
+
         if (target.gameObject == other.gameObject)
         {
             agent.enabled = false;
-            animator.SetBool("isMoving", false);
+            animator.SetInteger("npcState", 2);
             yield return new WaitForSeconds(5f);
-            animator.SetBool("isMoving", true);
+            animator.SetInteger("npcState", 1);
+            agent.enabled = true;
+        }
+        else
+        {
+            animator.SetInteger("npcState", 0);
+            yield return new WaitForSeconds(5f);
+            animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }
             
