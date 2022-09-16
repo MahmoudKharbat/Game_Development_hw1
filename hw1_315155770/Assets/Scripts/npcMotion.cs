@@ -33,7 +33,6 @@ public class npcMotion : MonoBehaviour
 
     IEnumerator changeState(Collider other)
     {
-        print("your postion is: " + agent.transform.position);
         if (target.gameObject == other.gameObject)
         {
             agent.enabled = false;
