@@ -8,7 +8,6 @@ public class npc2Motion : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     public GameObject target;
-    private float time;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +40,11 @@ public class npc2Motion : MonoBehaviour
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }
-        else if (agent.transform.position.x > -9)
+        else
         {
             agent.enabled = false;
             animator.SetInteger("npcState", 0);
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(5f);
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }

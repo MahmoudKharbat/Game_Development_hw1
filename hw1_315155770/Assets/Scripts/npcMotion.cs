@@ -8,7 +8,6 @@ public class npcMotion : MonoBehaviour
     private Animator animator;
     private NavMeshAgent agent;
     public GameObject target;
-    private float time;
 
     // Start is called before the first frame update
     void Start()
