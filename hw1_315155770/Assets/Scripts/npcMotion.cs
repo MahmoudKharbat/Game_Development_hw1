@@ -33,15 +33,7 @@ public class npcMotion : MonoBehaviour
 
     IEnumerator changeState(Collider other)
     {
-        /*if (target.gameObject == other.gameObject && target.transform.position.x > -8f)
-        {
-            agent.enabled = false;
-            animator.SetInteger("npcState", 0);
-            yield return new WaitForSeconds(5f);
-            animator.SetInteger("npcState", 1);
-            agent.enabled = true;
-        }*/
-
+        print("your postion is: " + agent.transform.position);
         if (target.gameObject == other.gameObject)
         {
             agent.enabled = false;
@@ -50,10 +42,11 @@ public class npcMotion : MonoBehaviour
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }
-        else
+        else if(agent.transform.position.x > -9)
         {
+            agent.enabled = false;
             animator.SetInteger("npcState", 0);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(10f);
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }

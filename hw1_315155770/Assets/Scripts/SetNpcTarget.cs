@@ -36,22 +36,22 @@ public class SetNpcTarget : MonoBehaviour
             }
             if (targetCounter == 3)
             {
-                transform.position = new Vector3(-10, 3, -37);
+                transform.position = new Vector3(-10.5f, 3, -37);
                 targetCounter = 4;
             }
             if (targetCounter == 2)
             {
-                transform.position = new Vector3(-10, 3, -34);
+                transform.position = new Vector3(-10.5f, 3, -34);
                 targetCounter = 3;
             }
             if (targetCounter == 1)
             {
-                transform.position = new Vector3(-10,3,-32);
+                transform.position = new Vector3(-10.5f, 3, -32);
                 targetCounter = 2;
             }
             if (targetCounter == 0)
             {
-                transform.position = new Vector3(-10, 3, -28);
+                transform.position = new Vector3(-10.5f, 3, -27);
                 targetCounter = 1;
             }
         }
