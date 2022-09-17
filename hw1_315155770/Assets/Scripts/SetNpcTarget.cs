@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SetNpcTarget : MonoBehaviour
 {
-    public static readonly int targets = 5;
     public GameObject npc;
     private int targetCounter = 1;
 

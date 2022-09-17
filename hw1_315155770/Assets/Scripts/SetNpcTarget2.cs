@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class SetNpcTarget2 : MonoBehaviour
 {
-    public static readonly int targets = 5;
     public GameObject npc;
     private int targetCounter = 1;
 
@@ -31,22 +30,25 @@ public class SetNpcTarget2 : MonoBehaviour
             }
             if (targetCounter == 3)
             {
-                transform.position = new Vector3(-10.5f, 3, -37);
+                
+                transform.position = new Vector3(-3.5f, 4, -35);
                 targetCounter = 4;
             }
             if (targetCounter == 2)
             {
-                transform.position = new Vector3(-10.5f, 3, -34);
+                
+                transform.position = new Vector3(-10, 11, -35);
                 targetCounter = 3;
             }
             if (targetCounter == 1)
             {
-                transform.position = new Vector3(5.5f,11,-34);
+                
+                transform.position = new Vector3(-2.5f, 11, -34);
                 targetCounter = 2;
             }
             if (targetCounter == 0)
             {
-                transform.position = new Vector3(-10.5f, 3, -27);
+                transform.position = new Vector3(5.5f, 11, -34);
                 targetCounter = 1;
             }
         }
