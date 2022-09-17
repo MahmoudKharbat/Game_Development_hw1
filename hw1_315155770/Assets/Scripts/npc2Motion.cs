@@ -35,19 +35,24 @@ public class npc2Motion : MonoBehaviour
         if (target.gameObject == other.gameObject)
         {
             agent.enabled = false;
-            animator.SetInteger("npcState", 2);
+            animator.SetInteger("npcState", 0);
             yield return new WaitForSeconds(5f);
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
         }
         else
         {
+            animator.SetInteger("npcState", 1);
+            agent.enabled = true;
+        }
+        /*else
+        {
             agent.enabled = false;
             animator.SetInteger("npcState", 0);
             yield return new WaitForSeconds(5f);
             animator.SetInteger("npcState", 1);
             agent.enabled = true;
-        }
+        }*/
 
     }
 }
