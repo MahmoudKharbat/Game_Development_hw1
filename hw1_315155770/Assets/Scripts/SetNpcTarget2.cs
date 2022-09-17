@@ -24,9 +24,15 @@ public class SetNpcTarget2 : MonoBehaviour
     {
         if (other.gameObject == npc.gameObject)
         {
-            if (targetCounter == 4)
+            if (targetCounter == 5)
             {
                 targetCounter = 0;
+            }
+            if (targetCounter == 4)
+            {
+
+                transform.position = new Vector3(4.5f, 4, -34.5f);
+                targetCounter = 5;
             }
             if (targetCounter == 3)
             {

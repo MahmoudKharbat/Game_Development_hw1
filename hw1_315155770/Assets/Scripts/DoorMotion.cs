@@ -6,7 +6,6 @@ public class DoorMotion : MonoBehaviour
 {
     private Animator animator;
     private AudioSource audioSrc;
-    public GameObject npc;
     public string animationVarName = "";
 
     // Start is called before the first frame update
@@ -14,25 +13,18 @@ public class DoorMotion : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSrc = GetComponent<AudioSource>();
-        npc = GetComponent<GameObject>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == npc.gameObject)
-        {
-            animator.SetBool(animationVarName, true);
-            audioSrc.PlayDelayed(0.5f);
-        }
+        animator.SetBool(animationVarName, true);
+        audioSrc.PlayDelayed(0.5f);
     }
   
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == npc.gameObject)
-        {
-            animator.SetBool(animationVarName, false);
-            audioSrc.PlayDelayed(0.5f);
-        }   
+        animator.SetBool(animationVarName, false);
+        audioSrc.PlayDelayed(0.5f);  
     }
     // Update is called once per frame
     void Update()
