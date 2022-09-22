@@ -1,47 +1,12 @@
 fileFormatVersion: 2
-guid: 5d0ad02e2690c0d4e82a93ba78dd76c5
+guid: 5db257eb5d475704db4a269e43ef82ee
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch42_Body
-    second: {fileID: 2100000, guid: c9c26cc463834344e8bd5a912531969b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ch42_Hair
-    second: {fileID: 2100000, guid: 5a2f2dae2e7259f41ba98e812d6ae362, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch42_1001_Diffuse
-    second: {fileID: 2800000, guid: 5b3886ceabef1754681d65d4f1b5c9f0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch42_1001_Glossiness
-    second: {fileID: 2800000, guid: f1fbdbdf5dbec89458df2e3a176021da, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch42_1001_Normal
-    second: {fileID: 2800000, guid: 5d009100018d591449c2c5a6a30b15fe, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch42_1001_Specular
-    second: {fileID: 2800000, guid: 9ecfc0f7490adf24dac633574f6e176a, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Ch42_1002_Diffuse
-    second: {fileID: 2800000, guid: 60487a7656d07624d9a64685609c89c3, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -113,8 +78,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 5db257eb5d475704db4a269e43ef82ee
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
