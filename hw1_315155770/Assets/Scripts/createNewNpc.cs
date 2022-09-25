@@ -24,16 +24,12 @@ public class createNewNpc : MonoBehaviour
             Instantiate(npcs[npcCount], new Vector3(x, 1.5f, z), Quaternion.identity);
             yield return new WaitForSeconds(5f);
             npcCount++;
-        }
-
-        print("hello from between whiles");
-        npcCount--;
-        while (npcCount >= 0)
-        {
-            print("hello from second while");
-            //Destroy(npcs[npcCount], 5f);
-           // Destroy();
-            npcCount--;
+            if(npcCount == 4)
+            {
+                yield return new WaitForSeconds(15f);
+                npcCount = 0;
+            }
+                
         }
     }
 }
