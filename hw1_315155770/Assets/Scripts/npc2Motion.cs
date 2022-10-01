@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class npc2Motion : MonoBehaviour
 {
-    private int targetsNum = 2;
+    private int targetsNum = 3;
     private int currTarget = 0;
     private NavMeshAgent agent;
     public GameObject[] targets;
@@ -37,7 +37,6 @@ public class npc2Motion : MonoBehaviour
 
             case 1: // reach the dest - standing - and then start walking again
                 agent.enabled = false;
-                animator.SetInteger("state", 2);
                 animator.SetInteger("state", 1);
                 yield return new WaitForSeconds(5f);
                 agent.enabled = true;
@@ -53,12 +52,7 @@ public class npc2Motion : MonoBehaviour
     {
         if (targets[currTarget].gameObject == other.gameObject)
         {
-            if (currTarget == 0)
-                StartCoroutine(changeState(1));
-
-            if (currTarget == 1)
-                StartCoroutine(changeState(2));
-            
+            StartCoroutine(changeState(currTarget));
             currTarget++;
             currTarget %= targetsNum;
         }

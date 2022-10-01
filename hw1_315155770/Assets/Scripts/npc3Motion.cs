@@ -36,11 +36,14 @@ public class npc3Motion : MonoBehaviour
                 break;
 
             case 1: // reach the dest - standing - and then start walking again
+                //print("hello from case1");
                 agent.enabled = false;
                 animator.SetInteger("state", 1);
-                yield return new WaitForSeconds(5f);
-                agent.enabled = true;
-                animator.SetInteger("state", 0);
+                 //print("hello from case1");
+                 yield return new WaitForSeconds(5f);
+                 agent.enabled = true;
+                 animator.SetInteger("state", 0);
+                 //print("hello from case1");
                 break;
             case 2: // reach the last dest - destroy
                 Destroy(currNpc);
@@ -50,17 +53,19 @@ public class npc3Motion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (targets[currTarget].gameObject == other.gameObject )
+        if (targets[currTarget].gameObject == other.gameObject)
         {
-            if(currTarget == 0 || currTarget == 1)
+            if (currTarget == 0 || currTarget == 1)
                 StartCoroutine(changeState(1));
+
             if (currTarget == 2)
                 StartCoroutine(changeState(2));
+
             currTarget++;
             currTarget %= targetsNum;
         }
         else
             StartCoroutine(changeState(0));
-            
+
     }
 }
