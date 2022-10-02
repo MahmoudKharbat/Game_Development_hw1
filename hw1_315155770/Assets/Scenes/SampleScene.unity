@@ -211,13 +211,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: couples_table_num4
       objectReference: {fileID: 0}
+    - target: {fileID: 4397451877250076276, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7688330491998360871, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7688330491998360871, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
@@ -1887,7 +1891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618505057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13, y: 0, z: -6}
+  m_LocalPosition: {x: -12.5, y: 0, z: -6.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3988,7 +3992,9 @@ MonoBehaviour:
   - {fileID: 2055470752}
   - {fileID: 400956227}
   - {fileID: 1168866483}
+  - {fileID: 1745678389}
   - {fileID: 1822691109}
+  currNpc: {fileID: 1267624168}
 --- !u!1001 &1294254140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4324,11 +4330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7688330491998360871, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7688330491998360871, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
@@ -4398,7 +4404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7688330491998360871, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622c96c7a5d3fdb40ae43270ac7f2f62, type: 3}
@@ -4892,7 +4898,7 @@ GameObject:
   - component: {fileID: 1745678392}
   - component: {fileID: 1745678391}
   m_Layer: 0
-  m_Name: way_to_line2
+  m_Name: sitting_chair1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4906,7 +4912,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745678389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.8, y: 0, z: 0}
+  m_LocalPosition: {x: -8.5, y: 7, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4924,7 +4930,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1745678392
 MeshRenderer:
@@ -7518,7 +7524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 237753611631173844, guid: 0ed3d23cc256596498dc748baf7e9cbe, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 237753611713908396, guid: 0ed3d23cc256596498dc748baf7e9cbe, type: 3}
       propertyPath: m_NavMeshLayer
@@ -7582,7 +7588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6122686920013642631, guid: 0ed3d23cc256596498dc748baf7e9cbe, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6122686920043754576, guid: 0ed3d23cc256596498dc748baf7e9cbe, type: 3}
       propertyPath: m_NavMeshLayer
