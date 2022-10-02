@@ -63,9 +63,12 @@ public class npc4Motion : MonoBehaviour
                 StartCoroutine(changeState(1));
 
             else if (currTarget == 3)
-                StartCoroutine(changeState(2));
+                StartCoroutine(changeState(0));
 
             else if (currTarget == 4)
+                StartCoroutine(changeState(2));
+
+            else if (currTarget == 5)
                 StartCoroutine(changeState(3));
 
             currTarget++;
