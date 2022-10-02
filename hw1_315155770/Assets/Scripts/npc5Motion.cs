@@ -38,7 +38,10 @@ public class npc5Motion : MonoBehaviour
             case 1: // reach the dest - standing - and then start walking again
                 agent.enabled = false;
                 animator.SetInteger("state", 0);
-                yield return new WaitForSeconds(5f);
+                if(currTarget == 3)
+                    yield return new WaitForSeconds(10f);
+                else
+                    yield return new WaitForSeconds(5f);
                 agent.enabled = true;
                 animator.SetInteger("state", 1);
                 break;

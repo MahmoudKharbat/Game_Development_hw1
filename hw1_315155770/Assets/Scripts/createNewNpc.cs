@@ -16,17 +16,18 @@ public class createNewNpc : MonoBehaviour
 
     IEnumerator addNpc()
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(60f);
         while (npcCount < 4)
         {
-            x = Random.Range(2, 6);
+            x = Random.Range(4, 6);
             z = Random.Range(-43, -41);
+            //yield return new WaitForSeconds(5f);
             Instantiate(npcs[npcCount], new Vector3(x, 1.5f, z), Quaternion.identity);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
             npcCount++;
             if(npcCount == 4)
             {
-                yield return new WaitForSeconds(15f);
+                yield return new WaitForSeconds(60f);
                 npcCount = 0;
             }
                 
