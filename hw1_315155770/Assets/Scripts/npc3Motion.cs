@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class npc3Motion : MonoBehaviour
 {
-    private int targetsNum = 3;
     private int currTarget = 0;
     private NavMeshAgent agent;
     public GameObject[] targets;
@@ -17,6 +16,7 @@ public class npc3Motion : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        agent.enabled = false;
     }
 
     // Update is called once per frame
@@ -32,18 +32,15 @@ public class npc3Motion : MonoBehaviour
         {
             case 0:// walking
                 agent.enabled = true;
-                animator.SetInteger("state", 0);
+                animator.SetInteger("state", 1);
                 break;
 
             case 1: // reach the dest - standing - and then start walking again
-                //print("hello from case1");
                 agent.enabled = false;
-                animator.SetInteger("state", 1);
-                 //print("hello from case1");
+                animator.SetInteger("state", 0);
                  yield return new WaitForSeconds(5f);
                  agent.enabled = true;
-                 animator.SetInteger("state", 0);
-                 //print("hello from case1");
+                 animator.SetInteger("state", 1);
                 break;
             case 2: // reach the last dest - destroy
                 Destroy(currNpc);
@@ -62,7 +59,7 @@ public class npc3Motion : MonoBehaviour
                 StartCoroutine(changeState(2));
 
             currTarget++;
-            currTarget %= targetsNum;
+            currTarget %= targets.Length;
         }
         else
             StartCoroutine(changeState(0));

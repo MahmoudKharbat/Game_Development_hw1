@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class npcSitting : MonoBehaviour
+public class npc4Motion : MonoBehaviour
 {
-    private int targetsNum = 6;
     private int currTarget = 0;
     private NavMeshAgent agent;
     public GameObject[] targets;
+    public GameObject currNpc;
     Animator animator;
 
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class npcSitting : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        //agent.enabled = false;
+        agent.enabled = false;
     }
 
     // Update is called once per frame
@@ -32,25 +32,25 @@ public class npcSitting : MonoBehaviour
         {
             case 0:// walking
                 agent.enabled = true;
-                animator.SetInteger("state", 0);
+                animator.SetInteger("state", 1);
                 break;
 
             case 1: // reach the dest - standing - and then start walking again
-                print("hello1");
                 agent.enabled = false;
-                animator.SetInteger("state", 1);
-                yield return new WaitForSeconds(10f);
-                agent.enabled = true;
                 animator.SetInteger("state", 0);
+                yield return new WaitForSeconds(5f);
+                agent.enabled = true;
+                animator.SetInteger("state", 1);
                 break;
-
-            case 2: // reach the dest - sitting - and then start walking again
-                print("hello2");
+            case 2: // reach the dest - standing - and then start walking again
                 agent.enabled = false;
                 animator.SetInteger("state", 2);
-                yield return new WaitForSeconds(10f);
+                yield return new WaitForSeconds(5f);
                 agent.enabled = true;
-                animator.SetInteger("state", 0);
+                animator.SetInteger("state", 1);
+                break;
+            case 3: // reach the last dest - destroy
+                Destroy(currNpc);
                 break;
         }
     }
@@ -59,12 +59,16 @@ public class npcSitting : MonoBehaviour
     {
         if (targets[currTarget].gameObject == other.gameObject)
         {
-            if (currTarget != 0 && currTarget != 1 && currTarget != 5)
+            if (currTarget == 0 || currTarget == 1 || currTarget == 2)
                 StartCoroutine(changeState(1));
-            else if (currTarget == 5)
+
+            else if (currTarget == 3)
                 StartCoroutine(changeState(2));
+
+            else if (currTarget == 4)
+                StartCoroutine(changeState(3));
+
             currTarget++;
-            currTarget %= targetsNum;
         }
         else
             StartCoroutine(changeState(0));
